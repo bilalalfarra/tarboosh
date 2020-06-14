@@ -9,6 +9,8 @@ import { AdminOrdersComponent } from './components/admin-orders/admin-orders.com
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthGuard } from "shared/services/auth-guard.service";
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
+
 
 @NgModule({
   imports: [
@@ -33,6 +35,11 @@ import { AuthGuard } from "shared/services/auth-guard.service";
         path: 'admin/orders', 
         component: AdminOrdersComponent, 
         canActivate: [AuthGuard, AdminAuthGuard] 
+      },
+      { 
+        path: 'admin/orders/:id', 
+        component: OrderDetailsComponent, 
+        canActivate: [AuthGuard, AdminAuthGuard] 
       }
     ])            
   ],
@@ -40,6 +47,7 @@ import { AuthGuard } from "shared/services/auth-guard.service";
     ProductFormComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
+    OrderDetailsComponent
   ]
 })
 export class AdminModule { }

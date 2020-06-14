@@ -1,5 +1,16 @@
 {
   "hosting": {
-    "public": "dist"
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "!{/bower_components,/dist}/**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }

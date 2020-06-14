@@ -1,0 +1,19 @@
+<div class="form-group" *ngFor="let itm of orders1$ | async">
+<div>
+  <label class="bold-font">Customer Name: </label>
+    <label> {{ itm.shipping.name }}</label>
+</div>
+<div>
+  <label class="bold-font">Customer Address 1: </label>
+    <label> {{ itm.shipping.addressLine1 }}</label>
+</div>
+<div>
+  <label class="bold-font">Customer Address 2: </label>
+    <label> {{ itm.shipping.addressLine2 }}</label>
+</div>
+<div>
+  <label class="bold-font">Customer City: </label>
+    <label> {{ itm.shipping.city }}</label>
+</div>
+
+</div>

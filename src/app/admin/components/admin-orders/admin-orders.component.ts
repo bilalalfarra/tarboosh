@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminOrdersComponent {
   orders$;
+  orders1$;
 
   constructor(private orderService: OrderService) { 
     this.orders$ = orderService.getOrders();
+    this.orders1$ = orderService.getOrders1();
   }
 }

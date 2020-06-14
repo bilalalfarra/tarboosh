@@ -16,12 +16,27 @@ export class OrderService {
   getOrders() { 
     return this.db.list('/orders');
   }
+ 
+  getOrders1() { 
+    return this.db.object('/orders');
+  }
 
   getOrdersByUser(userId: string) {
     return this.db.list('/orders', {
       query: {
         orderByChild: 'userId',
         equalTo: userId        
+      }
+    });
+  }
+  
+  getOrderById(orderId: number) {
+    // return this.db.object(`/orders/${orderId}`);
+    debugger;
+    return this.db.list('/orders', {
+      query: {
+        orderByChild: 'datePlaced',
+        equalTo: orderId        
       }
     });
   }

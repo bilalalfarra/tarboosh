@@ -33,7 +33,7 @@ export class ProductsComponent implements OnInit  {
   private populateProducts() { 
     this.productService
       .getAll()
-      .switchMap(products => {
+      .switchMap((products:  Product[]) => {
         this.products = products;
         return this.route.queryParamMap;
       })
